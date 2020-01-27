@@ -63,7 +63,6 @@ class Demo():
     def s3(request):  
         print("\n\n************************************* s3 test*************************************")
 
-        bucket= settings.BUCKET
         #bucket='thrivee-dev/audiotranscribe'
         bucket=  'thrivee-dev'
 
