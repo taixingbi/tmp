@@ -32,6 +32,14 @@ import time
 
 from django.conf import settings
 
+# from database.models import Teleconference_transcribe
+# from database.serializers import Teleconference_transcribeSerializer
+
+from database.orm import DBRead
+
+from django.conf.urls import url
+
+
 
 dataTime= {
     "time": timezone.localtime(),
@@ -52,6 +60,9 @@ class Demo():
     #/test/
     def test(request):  
         print("\n\n*************************************transcribe test*************************************")
+
+        # data= DBRead().update("demo.wav", "cool test")
+        # print(data)
 
         dataJson= {
             "test1": "test"
@@ -81,11 +92,11 @@ class Demo():
     #/test/db
     def db(request):  
         print("\n\n************************************* db test*************************************")
-        email= DBRead().test() 
-
+        
+        data= DBRead().ml_test()
+        print(data)
         data= {
-            "db test": "success",
-            "email": email,
+            "db test": data
         }
         
         return JsonResponse(data)

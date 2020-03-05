@@ -1,15 +1,27 @@
 from django.db import models
 from django.conf import settings
 
-class Account(models.Model):
+class Ml_test(models.Model):
     email = models.CharField(max_length=255)
+    name = models.CharField(max_length=255)
 
     def __str__(self):
         return str(self.id)
 
     class Meta:
-        db_table = 'account'
+        db_table = 'ml_test'
 
+
+# class Teleconference_transcribe(models.Model):
+#     filename = models.CharField(max_length=100)
+#     transcription = models.TextField(max_length=500)
+#     transcription_baseline = models.TextField(max_length=500)
+
+#     def __str__(self):
+#         return str(self.id)
+
+#     class Meta:
+#         db_table = "teleconference_transcribe"
 
 
 

@@ -39,7 +39,14 @@ INSTALLED_APPS = [
     'mysite.core',
     'database',
     'aws',
+    'rest_framework',
 ]
+
+REST_FRAMEWORK = {
+  'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema'
+}
+
+
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 

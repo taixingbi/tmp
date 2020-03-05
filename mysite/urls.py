@@ -25,8 +25,6 @@ urlpatterns = [
         #path('<key>', views.Demo.demo, name='demo'),
         path('demo/', views.Demo.demo, name='demo'),
     ])),
-
-
 ]
 
 if settings.DEBUG:

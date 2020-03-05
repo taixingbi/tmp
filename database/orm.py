@@ -1,5 +1,10 @@
-from .models import Account
 from django.conf import settings
+from .models import Ml_test
+from .serializers import Ml_testSerializer
+
+#from .models import Teleconference_transcribe
+#from .serializers import Teleconference_transcribeSerializer
+from django.http import Http404
 
 import pandas as pd 
 
@@ -7,19 +12,39 @@ class DBRead():
     def __init__(self):
         self.print= None
      
-    def test(self):
-        id= 325
+    def ml_test(self, name="hunter"):
+        try:
+            e= Ml_test.objects.filter( name= name )
+        except:
+            raise Http404("can not access to mysql")
 
-        e= Account.objects.filter( id= id ) #entry
-        print(e)
+        serializer = Ml_testSerializer( e, many=True)
+        
+        if not serializer.data:
+            raise Http404("filename can not found in table")
 
-        if not e.exists(): return False
+        return serializer.data
 
-        email= e.values('email')[0]['email']
 
-        print(email)
 
-        return email
+    # def update(self, filename=None, transcription=None):
+    #     try:
+    #         e= Teleconference_transcribe.objects.filter( filename= filename )
+    #     except:
+    #         raise Http404("can not access to mysql")
+
+    #     serializer = Teleconference_transcribeSerializer( e, many=True)
+        
+    #     if not serializer.data:
+    #         raise Http404("filename can not found in table")
+
+    #     row= e.update(transcription_baseline= transcription)
+    #     print("successfully update db ")
+
+    #     return serializer.data
+     
+
+
 
 
 
