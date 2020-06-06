@@ -16,8 +16,7 @@ class s3Bucket:
         self.s3 = boto3.client(
             's3',
             region_name="us-east-1",
-            #aws_access_key_id='AKIARJLDNDHB3VFXXTOI',
-            #aws_secret_access_key='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'
+           
             aws_access_key_id= settings.AWS_ACCESS_KEY_ID,
             aws_secret_access_key= settings.AWS_SECRET_ACCESS_KEY
         )
