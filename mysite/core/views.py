@@ -57,15 +57,12 @@ def logout_view(request):
 # -----------------------------------------for api-------------------------------------
 class Demo(): 
 
-    #/test/
-    def test(request):  
-        print("\n\n*************************************transcribe test*************************************")
-
-        # data= DBRead().update("demo.wav", "cool test")
-        # print(data)
+    #/version/
+    def version(request):  
+        print("\n\n*************************************version*************************************")
 
         dataJson= {
-            "test1": "test"
+            "version": "1.0"
         }
 
         return JsonResponse(dataJson)
@@ -114,13 +111,23 @@ class Demo():
 
 
     #/api/demo
-    def demo(request):  #s3 key
-        print("\n\n*************************************transcription api Service *************************************")
+    def demo(request, key):  #s3 key
+        print("\n\n************************************* demo *************************************")
+        print(key)
 
         data= {
-            "demo": "demo",
-        }
-        
+            "e": "sonething wrong",
+        }       
+
+        if request.method == 'POST':
+            print("POST...")
+
+        if request.method == 'GET':
+            print("GET...")
+
+        data = json.loads(request.body) 
+        print(data)
+
         return JsonResponse(data)
 
         # df= pd.DataFrame(data, index=[0])

@@ -1,8 +1,10 @@
 
-### run pip shell
+### run aws ubuntu 18.04
+https://www.digitalocean.com/community/tutorials/how-to-install-the-django-web-framework-on-ubuntu-18-04
+
 ```
-python3 -m venv myvenv
-source myvenv/bin/activate
+python3 -m venv my_env
+source my_env/bin/activate
 pip install -r requirements.txt
 ```
 
@@ -15,7 +17,6 @@ python manage.py makemigrations
 ```
 python manage.py migrate 
 ```
-
 
 ### run local
 ```

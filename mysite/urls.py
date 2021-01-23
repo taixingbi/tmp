@@ -15,7 +15,7 @@ urlpatterns = [
     path('logout/', views.logout_view, name='logout'),
 
     #test
-    path('test/', views.Demo.test, name='test'),
+    path('version/', views.Demo.version, name='version'),
     path('s3/', views.Demo.s3, name='s3'),
     path('db/', views.Demo.db, name='db'),
     path('ses/', views.Demo.ses, name='ses'),
@@ -23,7 +23,7 @@ urlpatterns = [
     #api
     path('api/', include([
         #path('<key>', views.Demo.demo, name='demo'),
-        path('demo/', views.Demo.demo, name='demo'),
+        path('demo/<key>', views.Demo.demo, name='demo'),
     ])),
 ]
 
