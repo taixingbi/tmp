@@ -26,7 +26,7 @@ python manage.py runserver 0.0.0.0:8083
 ### run aws ubuntu 18.04
 https://www.digitalocean.com/community/tutorials/how-to-install-the-django-web-framework-on-ubuntu-18-04
 ```
-python3.6 -m venv my_env
+python3 -m venv my_env
 source my_env/bin/activate
 ```
 
